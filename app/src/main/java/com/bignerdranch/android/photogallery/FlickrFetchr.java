@@ -21,7 +21,7 @@ import java.util.List;
 
 public class FlickrFetchr {
 
-    private static final String TAG = "FlickrFetchr";
+    private static final String TAG = "PhotoGalleryFragment";
     private static final String API_KEY = "329aba8de6a73c48fc76e9c63fec4bd0";
 
     public List<GalleryItem> fetchItems() {
