@@ -46,7 +46,7 @@ public class PhotoGalleryFragment extends Fragment{
                 new ThumbnailDownloader.ThumbnailDownloadListener<PhotoHolder>() {
                     @Override
                     public void onThumbnailDownloaded(PhotoHolder photoHolder, Bitmap bitmap) {
-                        Drawable drawable = new BitmapDrawable(getResources(), bitmap);
+                        Drawable drawable = new BitmapDrawable(getResources(), bitmap);//?
                         photoHolder.bindDrawable(drawable);
                     }
                 }
@@ -102,6 +102,7 @@ public class PhotoGalleryFragment extends Fragment{
         public PhotoAdapter(List<GalleryItem> galleryItems) {
             mGalleryItems = galleryItems;
         }
+
         @Override
         public PhotoHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             LayoutInflater inflater = LayoutInflater.from(getActivity());
@@ -115,6 +116,7 @@ public class PhotoGalleryFragment extends Fragment{
             photoHolder.bindDrawable(placeholder);
             mThumbnailDownloader.queueThumbnail(photoHolder, galleryItem.getUrl());
         }
+
         @Override
         public int getItemCount() {
             return mGalleryItems.size();
